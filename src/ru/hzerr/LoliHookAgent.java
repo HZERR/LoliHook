@@ -5,6 +5,8 @@ import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.security.ProtectionDomain;
 
+// C:\Users\HZERR\AppData\Roaming\.loliland\java\bin\java.exe -javaagent:"LoliHook.jar" -jar C:\Users\HZERR\AppData\Roaming\.loliland\launcher.jar
+
 public class LoliHookAgent implements ClassFileTransformer {
 
     public static void premain(String agentArgs, Instrumentation inst) {
@@ -14,6 +16,10 @@ public class LoliHookAgent implements ClassFileTransformer {
 
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
-        return new byte[0];
+        try {
+            if (className != null && className.contains("l0OO0lllAnd"))
+                return LoliHookTransformer.transform(classfileBuffer);
+        } catch (Throwable var7) { var7.printStackTrace(); }
+        return classfileBuffer;
     }
 }
