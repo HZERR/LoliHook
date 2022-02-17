@@ -9,7 +9,9 @@ import java.nio.charset.Charset;
 
 public class StringFinder {
 
-    private static final String target = "toCopy";
+    // l0OO0lllAnd - UPDATER
+
+    private static final String target = "toRemove";
     private static final BaseDirectory watchDirectory = new HDirectory("C:\\Users\\HZERR\\Desktop\\Loli Source");
 
     public static void main(String[] args) throws IOException {
@@ -33,7 +35,7 @@ public class StringFinder {
 
     private static void print(BaseFile file) throws IOException {
         if (file.readLines(Charset.defaultCharset()).filter(line -> line.contains(target)).findFirst().isPresent()) {
-            System.out.println("TARGET FOUND: " + file.getName());
+            System.out.println("TARGET FOUND: " + file.getLocation());
         }
     }
 }
