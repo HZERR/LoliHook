@@ -11,16 +11,10 @@ public class StringFinder {
 
     // l0OO0lllAnd - UPDATER
 
-    private static final String target = "toRemove";
-    private static final BaseDirectory watchDirectory = new HDirectory("C:\\Users\\HZERR\\Desktop\\Loli Source");
+    private static final String target = "[";
+    private static final BaseDirectory watchDirectory = new HDirectory("C:\\Users\\HZERR\\Desktop\\Loli Source\\loliland");
 
     public static void main(String[] args) throws IOException {
-//        watchDirectory.getFiles().wrap(Throwable::printStackTrace).forEach(file -> {
-//            System.out.println("Check " + file.getName());
-//            if (file.readLines(Charset.defaultCharset()).forEach(System.out::println).filter(line -> line.contains(target)).findFirst().isPresent()) {
-//                System.out.println("TARGET FOUND: " + file.getName());
-//            }
-//        });
         find(watchDirectory);
     }
 

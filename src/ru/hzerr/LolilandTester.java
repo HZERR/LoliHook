@@ -36,15 +36,10 @@ public class LolilandTester {
 
     public static void main(String[] args) throws IOException {
         currentLiquidBounce.copyToDirectory(mods);
-        AtomicReference<FileChannel> channel = new AtomicReference<>();
         checker.scheduleAtFixedRate(() -> {
             if (targetLiquidBounce.notExists()) {
                 try {
                     currentLiquidBounce.copyToDirectory(mods);
-                    if (channel.get() != null) {
-                        channel.set(new FileInputStream(targetLiquidBounce.asIOFile()).getChannel());
-                        channel.get().lock();
-                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

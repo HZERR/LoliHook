@@ -18,8 +18,7 @@ public class LoliHookTransformer {
         System.out.println("Modification of class " + clazz.getSimpleName());
         return ByteCodeBuilderFactory.createMethodByteCodeBuilder(bytes)
                 .filterByNames("I1O1I1LaNd")
-                .addPrintlnStackTraceWithTab()
-                .insertBefore()
+                .setEmptyBody()
                 .toBytecode();
     }
 }
