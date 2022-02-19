@@ -17,9 +17,9 @@ public class LoliHookAgent implements ClassFileTransformer {
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
         try {
-            if (className != null && className.contains("l0OO0lllAnd"))
+            if (className != null && className.contains("loliland"))
                 return LoliHookTransformer.transform(classfileBuffer);
-        } catch (Throwable var7) { var7.printStackTrace(); }
+        } catch (Throwable th) { th.printStackTrace(); }
         return classfileBuffer;
     }
 }

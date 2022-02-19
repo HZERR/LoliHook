@@ -6,13 +6,15 @@ import ru.hzerr.file.HDirectory;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 
 public class StringFinder {
 
     // l0OO0lllAnd - UPDATER
 
-    private static final String target = "[";
-    private static final BaseDirectory watchDirectory = new HDirectory("C:\\Users\\HZERR\\Desktop\\Loli Source\\loliland");
+    private static final String target = "OIi01Ol1LaNd"; // ExecutorService
+    private static final BaseDirectory watchDirectory = new HDirectory("C:\\Users\\HZERR\\IdeaProjects\\Loli-Source\\Loli Source\\loliland");
 
     public static void main(String[] args) throws IOException {
         find(watchDirectory);
