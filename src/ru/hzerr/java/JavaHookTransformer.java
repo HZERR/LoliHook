@@ -12,7 +12,6 @@ public class JavaHookTransformer {
 
     public static byte[] transform(byte[] bytes) throws IOException {
         CtClass clazz = ClassPool.getDefault().makeClass(new ByteArrayInputStream(bytes));
-        System.out.println("Test: " + clazz.getName());
         return JavaClasses
                 .getJavaClass(clazz.getSimpleName())
                 .filter(loliClasses -> !loliClasses.getJavaClass().getClass().isAnnotationPresent(Disable.class))
